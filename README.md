@@ -80,6 +80,19 @@ Run/study directories refuse reuse. Evaluation updates the active-study pointer 
 
 The waveform threat model keeps expert peak positions and past-RR features fixed. Epsilon is in normalized waveform units, not mV. These experiments do not evaluate an end-to-end detector, timing attacks, or certified robustness. Sigmoid scores are not calibrated probabilities.
 
+**ECG Classification & Adversarial Robustness**
+
+[Open Live Demo](https://ecg-research-project-gjt8bwajnhpfdj4qked5nk.streamlit.app/)
+|
+[Explore Study Evidence](https://ecg-research-project-gjt8bwajnhpfdj4qked5nk.streamlit.app/Study_Evidence)
+
+Explore ECG waveforms, model predictions, adversarial attacks, and
+results from 12 training runs across four model variants.
+
+Research prototype for signal and model evaluation—not for clinical diagnosis.
+
+
+
 ## Documentation
 
 - [Study results](docs/STUDY_RESULTS.md) and [model card](docs/MODEL_CARD.md)
