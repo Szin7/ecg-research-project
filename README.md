@@ -6,7 +6,6 @@ Suggested GitHub repository name: `ecg-research-project`.
 
 An ECG classification and adversarial-robustness workbench. Inspect annotated beats, compare waveform and rhythm-context models, and trace reported results to saved experiments.
 
-**Research prototype, not a diagnostic device.** V2 corrects the original shared-subject split and reports three seeds for each of four model variants. Its value is transparent evaluation and engineering; minority-class recognition and external validity remain limitations.
 
 ## Run the app
 
