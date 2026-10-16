@@ -98,9 +98,7 @@ Research prototype for signal and model evaluation—not for clinical diagnosis.
 - [Study results](docs/STUDY_RESULTS.md) and [model card](docs/MODEL_CARD.md)
 - [Data and attribution](docs/DATA_CARD.md)
 - [Deployment and verification](docs/DEPLOYMENT.md)
-- [Résumé entry and interview preparation](docs/RESUME_AND_INTERVIEW.md)
 - [Change history](docs/CHANGELOG.md)
-- [Historical review](docs/PROJECT_REVIEW.md)
 
 ## References
 
