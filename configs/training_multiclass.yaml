@@ -1,0 +1,35 @@
+# Secondary experiment: full 4-class AAMI (N/S/V/F, Q excluded) instead of
+# the primary binary task. Same architecture/capacity as training.yaml,
+# deliberately -- this experiment is about whether the task granularity
+# matters, not about giving the multi-class model more room to work with.
+seed: 42
+
+classes: [N, S, V, F]
+
+model:
+  name: cnn1d
+  in_channels: 1
+  conv_channels: [16, 32, 64]
+  kernel_sizes: [7, 5, 3]
+  fc_hidden: 32
+  dropout: 0.3
+  num_classes: 4
+
+optim:
+  name: adam
+  lr: 0.0005
+  weight_decay: 0.00001
+  scheduler: plateau
+  scheduler_patience: 4
+  scheduler_factor: 0.5
+
+train:
+  batch_size: 128
+  max_epochs: 50
+  early_stopping_patience: 15
+  early_stopping_metric: val_macro_f1
+  class_weighting: balanced
+
+checkpoint:
+  dir: artifacts/models
+  name: aami_cnn.pt

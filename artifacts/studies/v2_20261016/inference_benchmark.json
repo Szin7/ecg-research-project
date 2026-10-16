@@ -1,0 +1,78 @@
+{
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "torch_threads": 2,
+    "device": "cpu",
+    "packages": {
+      "torch": "2.14.1+cpu",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.8.0",
+      "wfdb": "4.3.1",
+      "streamlit": "1.65.0",
+      "plotly": "7.1.0"
+    }
+  },
+  "warmup_iterations": 20,
+  "results": [
+    {
+      "variant": "morphology",
+      "batch_size": 1,
+      "iterations": 100,
+      "median_ms_per_batch": 0.13033150003138871,
+      "p95_ms_per_batch": 0.3631136499507192,
+      "median_ms_per_beat": 0.13033150003138871,
+      "checkpoint_sha256": "112adda6854149618d3187ecebf325e522104d21a876f1d14770c863d0a53355"
+    },
+    {
+      "variant": "morphology",
+      "batch_size": 256,
+      "iterations": 100,
+      "median_ms_per_batch": 12.915094000049976,
+      "p95_ms_per_batch": 17.325317849940802,
+      "median_ms_per_beat": 0.05044958593769522,
+      "checkpoint_sha256": "112adda6854149618d3187ecebf325e522104d21a876f1d14770c863d0a53355"
+    },
+    {
+      "variant": "context",
+      "batch_size": 1,
+      "iterations": 100,
+      "median_ms_per_batch": 0.14575499994862184,
+      "p95_ms_per_batch": 0.27960329998677474,
+      "median_ms_per_beat": 0.14575499994862184,
+      "checkpoint_sha256": "0b72b7a1ed28e2e35850c3439e64131268769dd0a484d3eb68190bd3800f65e9"
+    },
+    {
+      "variant": "context",
+      "batch_size": 256,
+      "iterations": 100,
+      "median_ms_per_batch": 10.090550999962034,
+      "p95_ms_per_batch": 13.623666049920757,
+      "median_ms_per_beat": 0.039416214843601693,
+      "checkpoint_sha256": "0b72b7a1ed28e2e35850c3439e64131268769dd0a484d3eb68190bd3800f65e9"
+    },
+    {
+      "variant": "context_defended",
+      "batch_size": 1,
+      "iterations": 100,
+      "median_ms_per_batch": 0.13886499993986945,
+      "p95_ms_per_batch": 0.20029830001249138,
+      "median_ms_per_beat": 0.13886499993986945,
+      "checkpoint_sha256": "5e7b70492faabddfcd111b8bf8df959588ce9a7072b45a4595d660a48f73289d"
+    },
+    {
+      "variant": "context_defended",
+      "batch_size": 256,
+      "iterations": 100,
+      "median_ms_per_batch": 9.027193500060093,
+      "p95_ms_per_batch": 12.824040450050234,
+      "median_ms_per_beat": 0.03526247460960974,
+      "checkpoint_sha256": "5e7b70492faabddfcd111b8bf8df959588ce9a7072b45a4595d660a48f73289d"
+    }
+  ],
+  "process_peak_rss_mib_linux": 520.83203125,
+  "timing_note": "Excludes preprocessing, transport, cold start, and UI. Memory includes imports and data, not incremental model allocation."
+}

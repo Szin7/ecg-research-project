@@ -1,0 +1,46 @@
+{
+  "release_status": "completed",
+  "verified_utc": "2026-10-16T01:29:10.283430+00:00",
+  "training_runs_completed": 12,
+  "tests_passed": 105,
+  "hashed_environment_install": "passed",
+  "saved_study_verification": {
+    "training_runs_verified": 12,
+    "attack_rows_verified": 32,
+    "status": "passed"
+  },
+  "browser": {
+    "passed": [
+      "overview",
+      "ECG explorer",
+      "Adversarial lab",
+      "four-class results tab",
+      "Robustness benchmarks",
+      "synthetic peak precision and recall",
+      "Signal analysis",
+      "context integrated gradients",
+      "Model attribution",
+      "Run archive",
+      "What changed, and what held up?",
+      "12-seed CSV export",
+      "per-record errors",
+      "research filter and epsilon-zero attack",
+      "390px mobile without horizontal overflow, captions at full opacity"
+    ],
+    "target": "compact package without raw/full research data",
+    "runtime": "fresh hashed-lock environment"
+  },
+  "final_result_exports": {
+    "passed": [
+      "saved waveform and completed attack curves",
+      "benchmark audit CSV: ten rows, 1,408 beats each",
+      "32-row attack export: four complete pipelines and four 50-step checks",
+      "loaded mobile waveform, no horizontal overflow, readable captions"
+    ]
+  },
+  "adaptive_attacks": "all four pipelines completed",
+  "cpu_benchmark": "completed without training or attack jobs running",
+  "docker_build": "not executed: no Docker engine",
+  "remote_ci": "not executed",
+  "external_dataset_validation": "not performed"
+}

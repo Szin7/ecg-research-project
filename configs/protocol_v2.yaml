@@ -1,0 +1,98 @@
+protocol_id: mitbih_subject_disjoint_v2
+records:
+  train:
+  - 101
+  - 106
+  - 108
+  - 109
+  - 112
+  - 114
+  - 115
+  - 116
+  - 118
+  - 119
+  - 122
+  - 124
+  - 205
+  - 207
+  - 208
+  - 209
+  - 215
+  - 223
+  val:
+  - 203
+  - 220
+  - 230
+  test:
+  - 100
+  - 103
+  - 105
+  - 111
+  - 113
+  - 117
+  - 121
+  - 123
+  - 200
+  - 202
+  - 210
+  - 212
+  - 213
+  - 214
+  - 219
+  - 221
+  - 222
+  - 228
+  - 231
+  - 232
+  - 233
+  - 234
+preprocessing:
+  sample_rate_hz: 360
+  paced_records_excluded:
+  - 102
+  - 104
+  - 107
+  - 217
+  beat_window:
+    pre_r_samples: 90
+    post_r_samples: 160
+  baseline_wander:
+    method: median_filter
+    window_ms_short: 200
+    window_ms_long: 600
+  denoise:
+    enabled: false
+    lowpass_hz: 45
+  normalization:
+    method: zscore
+    clip_std: 6.0
+  label_map:
+    N:
+    - N
+    - L
+    - R
+    - e
+    - j
+    S:
+    - A
+    - a
+    - J
+    - S
+    V:
+    - V
+    - E
+    F:
+    - F
+    Q:
+    - /
+    - f
+    - Q
+  binary_task:
+    normal_classes:
+    - N
+    arrhythmia_classes:
+    - S
+    - V
+    - F
+    excluded_classes:
+    - Q

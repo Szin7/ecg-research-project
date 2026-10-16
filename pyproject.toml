@@ -1,0 +1,33 @@
+[project]
+name = "ecg-research-project"
+version = "0.3.0"
+description = "ECG classification and adversarial robustness evaluation research platform"
+requires-python = ">=3.11"
+dependencies = [
+    "torch>=2.6",
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "pandas>=2.0",
+    "scikit-learn>=1.4",
+    "matplotlib>=3.8",
+    "wfdb>=4.1",
+    "streamlit>=1.65",
+    "plotly>=5.24",
+    "pyyaml>=6.0",
+    # streamlit/pandas pull this in transitively for dataframe serialization;
+    # 24.0.0 has a native init crash on Python 3.14 (see pytest note below).
+    "pyarrow>=25",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["src*", "app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

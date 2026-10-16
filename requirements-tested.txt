@@ -1,0 +1,14 @@
+# Tested package versions on Python 3.12. Use as pip constraints (-c).
+# This is a tested direct-dependency set, not a full transitive lockfile.
+torch==2.14.1
+numpy==2.3.5
+scipy==1.17.0
+pandas==2.2.3
+scikit-learn==1.8.0
+matplotlib==3.10.8
+wfdb==4.3.1
+streamlit==1.65.0
+plotly==7.1.0
+PyYAML==6.0.3
+pyarrow==25.0.1
+pytest==9.1.1

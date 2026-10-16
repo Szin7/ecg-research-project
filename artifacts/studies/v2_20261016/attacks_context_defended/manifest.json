@@ -1,0 +1,32 @@
+{
+  "variant": "context_defended",
+  "smoothing": false,
+  "selected_run": "v2_context_defended_s42",
+  "checkpoint_sha256": "5e7b70492faabddfcd111b8bf8df959588ce9a7072b45a4595d660a48f73289d",
+  "threshold": 0.9756485819816589,
+  "config": {
+    "bootstrap_repetitions": 2000,
+    "attack_seed": 20261013,
+    "epsilons": [
+      0.0,
+      0.05,
+      0.1,
+      0.25,
+      0.4
+    ],
+    "pgd_steps": 20,
+    "pgd_starts": 3,
+    "strength_steps": 50,
+    "full_test_epsilons": [
+      0.1
+    ],
+    "audit_beats_per_record": 64,
+    "subset_seed": 20261013,
+    "threat_model": "Waveform-only Linf; expert peak positions and past RR features stay fixed."
+  },
+  "audit_indices_sha256": "d19d719f2215f9d2767c3d63984d72ef7b381b433074dab9597f05e0996a1c33",
+  "started_utc": "2026-10-16T01:16:00.520097+00:00",
+  "status": "completed",
+  "completed_utc": "2026-10-16T01:25:56.688018+00:00",
+  "results_sha256": "170d84476f0cc10b41b6968c599a65e3eaef2d45fe780decad28791fe427b140"
+}

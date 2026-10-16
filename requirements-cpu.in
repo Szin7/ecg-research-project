@@ -1,0 +1,15 @@
+-c requirements-tested.txt
+torch==2.14.1+cpu
+numpy
+scipy
+pandas
+scikit-learn
+matplotlib
+wfdb
+streamlit
+plotly
+pyyaml
+pyarrow
+pytest
+setuptools
+wheel

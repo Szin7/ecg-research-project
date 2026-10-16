@@ -1,0 +1,1406 @@
+{
+  "mode": "demo",
+  "tag": "demo_aami_cnn",
+  "task": "aami_multiclass",
+  "classes": [
+    "N",
+    "S",
+    "V",
+    "F"
+  ],
+  "seed": 42,
+  "best_val_macro_f1": 0.5,
+  "epochs_trained": 23,
+  "train_seconds": 3.6178126335144043,
+  "n_params": 11364,
+  "train_class_distribution": {
+    "0": 241,
+    "2": 79
+  },
+  "val_class_distribution": {
+    "0": 63,
+    "2": 17
+  },
+  "history": [
+    {
+      "epoch": 0,
+      "train_loss": 1.3924805720647175,
+      "accuracy": 0.2125,
+      "macro_f1": 0.25,
+      "weighted_f1": 0.2125,
+      "per_class": {
+        "N": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          63,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.3729597330093384
+    },
+    {
+      "epoch": 1,
+      "train_loss": 1.340913971265157,
+      "accuracy": 0.2125,
+      "macro_f1": 0.08762886597938144,
+      "weighted_f1": 0.07448453608247421,
+      "per_class": {
+        "N": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 0.2125,
+          "recall": 1.0,
+          "f1": 0.35051546391752575,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          63,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.3586620092391968
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.3045767545700073,
+      "accuracy": 0.2125,
+      "macro_f1": 0.08762886597938144,
+      "weighted_f1": 0.07448453608247421,
+      "per_class": {
+        "N": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 0.2125,
+          "recall": 1.0,
+          "f1": 0.35051546391752575,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          63,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.3428430557250977
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.2708957195281982,
+      "accuracy": 0.2125,
+      "macro_f1": 0.08762886597938144,
+      "weighted_f1": 0.07448453608247421,
+      "per_class": {
+        "N": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 0.2125,
+          "recall": 1.0,
+          "f1": 0.35051546391752575,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          63,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.3198580741882324
+    },
+    {
+      "epoch": 4,
+      "train_loss": 1.2446945508321126,
+      "accuracy": 0.2125,
+      "macro_f1": 0.08762886597938144,
+      "weighted_f1": 0.07448453608247421,
+      "per_class": {
+        "N": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 0.2125,
+          "recall": 1.0,
+          "f1": 0.35051546391752575,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          63,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.2902774810791016
+    },
+    {
+      "epoch": 5,
+      "train_loss": 1.2050979137420654,
+      "accuracy": 0.2125,
+      "macro_f1": 0.08762886597938144,
+      "weighted_f1": 0.07448453608247421,
+      "per_class": {
+        "N": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 0.2125,
+          "recall": 1.0,
+          "f1": 0.35051546391752575,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          63,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.251505970954895
+    },
+    {
+      "epoch": 6,
+      "train_loss": 1.1795897086461384,
+      "accuracy": 0.95,
+      "macro_f1": 0.4654874892148404,
+      "weighted_f1": 0.9518119068162209,
+      "per_class": {
+        "N": {
+          "precision": 1.0,
+          "recall": 0.9365079365079365,
+          "f1": 0.9672131147540983,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 0.8095238095238095,
+          "recall": 1.0,
+          "f1": 0.8947368421052632,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          59,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.217625379562378
+    },
+    {
+      "epoch": 7,
+      "train_loss": 1.1673256556193035,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "N": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          63,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.1850322484970093
+    },
+    {
+      "epoch": 8,
+      "train_loss": 1.1518125931421916,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "N": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          63,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.1568080186843872
+    },
+    {
+      "epoch": 9,
+      "train_loss": 1.1260804335276287,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "N": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          63,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.1337677240371704
+    },
+    {
+      "epoch": 10,
+      "train_loss": 1.1176671584447224,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "N": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          63,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.1129616498947144
+    },
+    {
+      "epoch": 11,
+      "train_loss": 1.1046295166015625,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "N": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          63,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.092842698097229
+    },
+    {
+      "epoch": 12,
+      "train_loss": 1.0912381013234456,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "N": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          63,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.0728522539138794
+    },
+    {
+      "epoch": 13,
+      "train_loss": 1.077763040860494,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "N": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          63,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.0616297721862793
+    },
+    {
+      "epoch": 14,
+      "train_loss": 1.0691410700480144,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "N": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          63,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.0515230894088745
+    },
+    {
+      "epoch": 15,
+      "train_loss": 1.064880092938741,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "N": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          63,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.040949821472168
+    },
+    {
+      "epoch": 16,
+      "train_loss": 1.0486305554707844,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "N": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          63,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.0308417081832886
+    },
+    {
+      "epoch": 17,
+      "train_loss": 1.0392279624938965,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "N": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          63,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.0208451747894287
+    },
+    {
+      "epoch": 18,
+      "train_loss": 1.037538766860962,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "N": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          63,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.016187310218811
+    },
+    {
+      "epoch": 19,
+      "train_loss": 1.033309777577718,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "N": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          63,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.010849952697754
+    },
+    {
+      "epoch": 20,
+      "train_loss": 1.0334326426188152,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "N": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          63,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.006022572517395
+    },
+    {
+      "epoch": 21,
+      "train_loss": 1.0085697174072266,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "N": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          63,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 1.0022141933441162
+    },
+    {
+      "epoch": 22,
+      "train_loss": 1.0180132389068604,
+      "accuracy": 1.0,
+      "macro_f1": 0.5,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "N": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 63
+        },
+        "S": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "V": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 17
+        },
+        "F": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          63,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "loss": 0.996758759021759
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "mode": "research",
+  "tag": "v2_context_s73",
+  "n_test_beats": 49685,
+  "protocol_id": "mitbih_subject_disjoint_v2",
+  "selected_run": "v2_context_s42",
+  "cnn": {
+    "accuracy": 0.9368622320619905,
+    "precision": 0.9431643625192012,
+    "recall": 0.4510560146923783,
+    "f1": 0.6102621443657598,
+    "pr_auc": 0.7596226747454674,
+    "roc_auc": 0.9227752911325985,
+    "confusion_matrix": [
+      [
+        44092,
+        148
+      ],
+      [
+        2989,
+        2456
+      ]
+    ]
+  },
+  "threshold": 0.8307128548622131,
+  "test_class_distribution": {
+    "0": 44240,
+    "1": 5445
+  },
+  "subject_bootstrap_95": {
+    "f1": {
+      "lower": 0.34160113116626123,
+      "upper": 0.808716872351497,
+      "defined_resamples": 2000
+    },
+    "recall": {
+      "lower": 0.21391565971237447,
+      "upper": 0.6972777282162946,
+      "defined_resamples": 2000
+    },
+    "precision": {
+      "lower": 0.7742390644694458,
+      "upper": 0.9942305366085769,
+      "defined_resamples": 2000
+    },
+    "accuracy": {
+      "lower": 0.8789935507085063,
+      "upper": 0.9758137165560893,
+      "defined_resamples": 2000
+    }
+  }
+}

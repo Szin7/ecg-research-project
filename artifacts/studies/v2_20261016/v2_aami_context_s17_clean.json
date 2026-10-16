@@ -1,0 +1,70 @@
+{
+  "mode": "research",
+  "tag": "v2_aami_context_s17",
+  "n_test_beats": 49685,
+  "protocol_id": "mitbih_subject_disjoint_v2",
+  "selected_run": "v2_aami_context_s17",
+  "classes": [
+    "N",
+    "S",
+    "V",
+    "F"
+  ],
+  "metrics": {
+    "accuracy": 0.9064305122270303,
+    "macro_f1": 0.43115141109419053,
+    "weighted_f1": 0.8989326437557479,
+    "per_class": {
+      "N": {
+        "precision": 0.9637902873312015,
+        "recall": 0.946993670886076,
+        "f1": 0.9553181543513208,
+        "support": 44240
+      },
+      "S": {
+        "precision": 0.5142857142857142,
+        "recall": 0.02939575394665215,
+        "f1": 0.055612770339855816,
+        "support": 1837
+      },
+      "V": {
+        "precision": 0.5684036089118026,
+        "recall": 0.9586956521739131,
+        "f1": 0.7136747196855855,
+        "support": 3220
+      },
+      "F": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 388
+      }
+    },
+    "confusion_matrix": [
+      [
+        41895,
+        41,
+        1679,
+        625
+      ],
+      [
+        1284,
+        54,
+        449,
+        50
+      ],
+      [
+        118,
+        10,
+        3087,
+        5
+      ],
+      [
+        172,
+        0,
+        216,
+        0
+      ]
+    ]
+  }
+}

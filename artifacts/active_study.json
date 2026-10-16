@@ -1,0 +1,15 @@
+{
+  "study_dir": "studies/v2_20261016",
+  "protocol_id": "mitbih_subject_disjoint_v2",
+  "selected_runs": {
+    "morphology": "v2_morphology_s17",
+    "context": "v2_context_s42",
+    "context_defended": "v2_context_defended_s42",
+    "aami_context": "v2_aami_context_s17"
+  },
+  "selection_rule": "highest validation score; test scores not used",
+  "evaluation_config_sha256": "596c76926ccf430222e38ecb933f73160cd9ce634f429d13bdf7a5f5d17a6956",
+  "dataset_manifest_sha256": "ce3692decadd4f0fbf830baab222d8f6cb9434ad908f0e2efc3191814dbe42cd",
+  "audit_indices_sha256": "d19d719f2215f9d2767c3d63984d72ef7b381b433074dab9597f05e0996a1c33",
+  "created_utc": "2026-10-16T01:15:57.540508+00:00"
+}

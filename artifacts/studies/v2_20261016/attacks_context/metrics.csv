@@ -1,0 +1,9 @@
+scope,n_beats,attack,epsilon,robust_accuracy,adversarial_f1,adversarial_recall,adversarial_precision,attack_success_rate,max_linf,steps,starts,objectives
+full_test,49685,pgd,0.0,0.9390359263359163,0.6226485611062663,0.45895316804407715,0.9678543764523625,0.0,0.0,20,3,margin + BCE
+full_test,49685,pgd,0.1,0.4386032001610144,0.0,0.0,0.0,0.5329218106995884,0.10000014305114746,20,3,margin + BCE
+record_balanced_audit,1408,pgd,0.0,0.9403409090909091,0.6,0.4315068493150685,0.984375,0.0,0.0,20,3,margin + BCE
+record_balanced_audit,1408,pgd,0.05,0.7776988636363636,0.0,0.0,0.0,0.1729607250755287,0.05000019073486328,20,3,margin + BCE
+record_balanced_audit,1408,pgd,0.1,0.44886363636363635,0.0,0.0,0.0,0.5226586102719033,0.10000014305114746,20,3,margin + BCE
+record_balanced_audit,1408,pgd,0.25,0.0,0.0,0.0,0.0,1.0,0.2500002384185791,20,3,margin + BCE
+record_balanced_audit,1408,pgd,0.4,0.0,0.0,0.0,0.0,1.0,0.40000009536743164,20,3,margin + BCE
+strength_check,1408,pgd,0.1,0.3650568181818182,0.0,0.0,0.0,0.6117824773413897,0.10000014305114746,50,3,20-step union + 50-step margin

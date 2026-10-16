@@ -1,0 +1,52 @@
+{
+  "mode": "research",
+  "tag": "v2_morphology_s73",
+  "n_test_beats": 49685,
+  "protocol_id": "mitbih_subject_disjoint_v2",
+  "selected_run": "v2_morphology_s17",
+  "cnn": {
+    "accuracy": 0.9353325953507095,
+    "precision": 0.8988563259471051,
+    "recall": 0.46189164370982555,
+    "f1": 0.6102147276477011,
+    "pr_auc": 0.707772917515561,
+    "roc_auc": 0.9026676077726136,
+    "confusion_matrix": [
+      [
+        43957,
+        283
+      ],
+      [
+        2930,
+        2515
+      ]
+    ]
+  },
+  "threshold": 0.8240650296211243,
+  "test_class_distribution": {
+    "0": 44240,
+    "1": 5445
+  },
+  "subject_bootstrap_95": {
+    "f1": {
+      "lower": 0.34496252879596423,
+      "upper": 0.8018242347647819,
+      "defined_resamples": 2000
+    },
+    "recall": {
+      "lower": 0.22406802197807227,
+      "upper": 0.7032985451357354,
+      "defined_resamples": 2000
+    },
+    "precision": {
+      "lower": 0.6841697496338626,
+      "upper": 0.9848754208029686,
+      "defined_resamples": 2000
+    },
+    "accuracy": {
+      "lower": 0.8774659729561589,
+      "upper": 0.9736377102105459,
+      "defined_resamples": 2000
+    }
+  }
+}

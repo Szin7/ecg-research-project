@@ -1,0 +1,33 @@
+# Epsilon values are expressed in per-beat z-score units (the model's own
+# normalization scale, std == 1 by construction). Checked against the real
+# processed test set before locking these in: mean abs amplitude is ~0.58,
+# median per-beat R-peak (max) amplitude is ~5.0, and the 10th/90th
+# percentile R-peaks span roughly 3.5-6.0 (the normalization clip bound).
+# So epsilon=0.02 is a small fraction of even the quiet baseline segments,
+# while epsilon=0.6 is large enough to meaningfully disturb them -- the
+# sweep is chosen to span "no visible effect" to "clearly visible,
+# especially away from the R-peak," not picked blindly.
+attack:
+  fgsm:
+    epsilons: [0.0, 0.02, 0.05, 0.1, 0.15, 0.25, 0.4, 0.6]
+    loss: bce
+  pgd:
+    epsilons: [0.0, 0.02, 0.05, 0.1, 0.15, 0.25, 0.4, 0.6]
+    alpha_ratio: 0.25
+    iterations: 10
+    random_start: true
+
+adversarial_training:
+  attack: pgd
+  epsilon: 0.1
+  alpha_ratio: 0.25
+  iterations: 7
+  clean_ratio: 0.5
+
+defense_secondary:
+  method: input_smoothing
+  kernel_size: 5
+
+evaluation:
+  primary_metric: f1
+  report_metrics: [accuracy, precision, recall, f1, pr_auc, roc_auc]

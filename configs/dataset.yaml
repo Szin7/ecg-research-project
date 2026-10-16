@@ -1,0 +1,51 @@
+sample_rate_hz: 360
+
+# Paced-rhythm recordings, excluded from the primary experiment following
+# AAMI / de Chazal convention -- paced beats are a different problem from
+# arrhythmia classification and would confound an inter-patient split.
+paced_records_excluded: [102, 104, 107, 217]
+
+split:
+  # de Chazal et al. (2004) inter-patient DS1/DS2 partition -- the standard
+  # reference split for MIT-BIH beat classification. DS2 is held out
+  # entirely as test; DS1 is further divided into train/val by record below.
+  # (record membership is verified against the actual downloaded database
+  # in prepare_data.py, not assumed blindly)
+  ds1_records: [101, 106, 108, 109, 112, 114, 115, 116, 118, 119, 122, 124,
+                201, 203, 205, 207, 208, 209, 215, 220, 223, 230]
+  ds2_records: [100, 103, 105, 111, 113, 117, 121, 123, 200, 202, 210, 212,
+                213, 214, 219, 221, 222, 228, 231, 232, 233, 234]
+  val_records: [201, 203, 220, 230]
+
+beat_window:
+  pre_r_samples: 90
+  post_r_samples: 160
+
+baseline_wander:
+  method: median_filter
+  window_ms_short: 200
+  window_ms_long: 600
+
+# Off by default -- MIT-BIH is a curated, expert-verified benchmark and
+# doesn't need blind denoising. Flip this on for a documented sensitivity
+# check, not as a default step.
+denoise:
+  enabled: false
+  lowpass_hz: 45
+
+normalization:
+  method: zscore
+  clip_std: 6.0
+
+# AAMI EC57 grouping of MIT-BIH annotation symbols.
+label_map:
+  N: ["N", "L", "R", "e", "j"]
+  S: ["A", "a", "J", "S"]
+  V: ["V", "E"]
+  F: ["F"]
+  Q: ["/", "f", "Q"]
+
+binary_task:
+  normal_classes: ["N"]
+  arrhythmia_classes: ["S", "V", "F"]
+  excluded_classes: ["Q"]

@@ -1,0 +1,25 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.ipynb_checkpoints/
+.claude/scheduled_tasks.lock
+
+data/raw/
+data/processed/
+
+.env
+
+# Workstation configuration and generated build/test output
+.claude/
+.vscode/
+.idea/
+.env.*
+!.env.example
+build/
+dist/
+.coverage
+htmlcov/
+
+.ruff_cache/

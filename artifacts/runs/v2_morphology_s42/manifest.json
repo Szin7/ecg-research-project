@@ -1,0 +1,489 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-16T01:06:23.821417+00:00",
+  "config": {
+    "study": {
+      "seeds": [
+        17,
+        42,
+        73
+      ],
+      "variants": [
+        "morphology",
+        "context",
+        "context_defended",
+        "aami_context"
+      ],
+      "max_epochs": 30,
+      "patience": 8,
+      "batch_size": 256,
+      "learning_rate": 0.0005,
+      "weight_decay": 1e-05,
+      "training_pgd": {
+        "epsilon": 0.1,
+        "steps": 3,
+        "clean_fraction": 0.5
+      },
+      "evaluation": {
+        "bootstrap_repetitions": 2000,
+        "attack_seed": 20261013,
+        "epsilons": [
+          0.0,
+          0.05,
+          0.1,
+          0.25,
+          0.4
+        ],
+        "pgd_steps": 20,
+        "pgd_starts": 3,
+        "strength_steps": 50,
+        "full_test_epsilons": [
+          0.1
+        ],
+        "audit_beats_per_record": 64,
+        "subset_seed": 20261013,
+        "threat_model": "Waveform-only Linf; expert peak positions and past RR features stay fixed."
+      },
+      "selection": "Highest validation F1 per variant; macro-F1 for AAMI. Report all seeds."
+    },
+    "variant": "morphology",
+    "seed": 42,
+    "model": {
+      "name": "cnn1d",
+      "in_channels": 1,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "kernel_sizes": [
+        7,
+        5,
+        3
+      ],
+      "fc_hidden": 32,
+      "dropout": 0.3,
+      "waveform_samples": 250,
+      "rr_features": 0,
+      "num_classes": 1
+    },
+    "multiclass_weighting": null
+  },
+  "dataset": {
+    "protocol_id": "mitbih_subject_disjoint_v2",
+    "config": {
+      "protocol_id": "mitbih_subject_disjoint_v2",
+      "records": {
+        "train": [
+          101,
+          106,
+          108,
+          109,
+          112,
+          114,
+          115,
+          116,
+          118,
+          119,
+          122,
+          124,
+          205,
+          207,
+          208,
+          209,
+          215,
+          223
+        ],
+        "val": [
+          203,
+          220,
+          230
+        ],
+        "test": [
+          100,
+          103,
+          105,
+          111,
+          113,
+          117,
+          121,
+          123,
+          200,
+          202,
+          210,
+          212,
+          213,
+          214,
+          219,
+          221,
+          222,
+          228,
+          231,
+          232,
+          233,
+          234
+        ]
+      },
+      "preprocessing": {
+        "sample_rate_hz": 360,
+        "paced_records_excluded": [
+          102,
+          104,
+          107,
+          217
+        ],
+        "beat_window": {
+          "pre_r_samples": 90,
+          "post_r_samples": 160
+        },
+        "baseline_wander": {
+          "method": "median_filter",
+          "window_ms_short": 200,
+          "window_ms_long": 600
+        },
+        "denoise": {
+          "enabled": false,
+          "lowpass_hz": 45
+        },
+        "normalization": {
+          "method": "zscore",
+          "clip_std": 6.0
+        },
+        "label_map": {
+          "N": [
+            "N",
+            "L",
+            "R",
+            "e",
+            "j"
+          ],
+          "S": [
+            "A",
+            "a",
+            "J",
+            "S"
+          ],
+          "V": [
+            "V",
+            "E"
+          ],
+          "F": [
+            "F"
+          ],
+          "Q": [
+            "/",
+            "f",
+            "Q"
+          ]
+        },
+        "binary_task": {
+          "normal_classes": [
+            "N"
+          ],
+          "arrhythmia_classes": [
+            "S",
+            "V",
+            "F"
+          ],
+          "excluded_classes": [
+            "Q"
+          ]
+        }
+      }
+    },
+    "source_hashes": {
+      "101.dat": "698d1ea6f472d23ca50317c72c96cda2698badd8578220ed0380cdf241e39006",
+      "101.hea": "d5f02fbe8673fa05465442191b98ca0d28a1670e7ef0e83fb9ef8723113a311c",
+      "101.atr": "441cdd6486cfdf4c53e344d1048ab81296773e7058d53069022adc68543a0663",
+      "106.dat": "c017bc18b95b1f970bca143a044ee5d54168648b541e47aa656f2737a59c1202",
+      "106.hea": "ad5ed3ee5603926a07a09f0d0c9e2a7ff10a705dbafcde3d185317730a8839ab",
+      "106.atr": "585347e6d1bd3ad89cdb52cb80945878a5e51026d81f871a376bb6e13936f7fa",
+      "108.dat": "229a4ef62679dc5c6ea781bfbaec2bd784151fc9f9517f4cdecd533a9431eb20",
+      "108.hea": "1c461d963db1883589a975daa80b4104eee6cabb2f5cfec3e0d63b78e7a6a405",
+      "108.atr": "ea227008ac3bc4ada87807117909e77ae0643d5a8bc09f32b9096a35f140cbf3",
+      "109.dat": "267afd6ced7a1fd5a8bcd21fcc2b83287e37e3ef57f32e8a0fe39a6e021951cd",
+      "109.hea": "3b21402a9a096acb6a2199b25681e40b0dd201494cb023ded514cd9726bb7fad",
+      "109.atr": "2eef456587bab17263a126063321c040affa29bc4ccfdf2a2bc7fe50709fa1b8",
+      "112.dat": "3c7af9758687314255b5d946a58d9509d53ecf2a300230684fa8ecf00b774bdb",
+      "112.hea": "a78dc4b0907b3db806395cff76b3a2e9a70e889b9dc3702c7de55aa8b41abd7d",
+      "112.atr": "69cf7ee24d65a5430162ae9b6452be9d4855c2af47f91976b7f02038ea115002",
+      "114.dat": "2ae83463edcfec256b79ce93716dcb40f289bacbe9e5e7a66cd00d0a31099d4b",
+      "114.hea": "830ba89cebf60945db0c78332e3cc6c64acbe218f6f16594660d4f17423ee889",
+      "114.atr": "5280acb082b654d64944137987a00fbc2105b3a3fcdda75d0bf11d4644e40d9f",
+      "115.dat": "34185efe9889608c76ebfbf5a467d3457970c6d11b77a2bf81b94bcf46e07c41",
+      "115.hea": "3212847a692bf3bc5e1dde0343d272e7d56735983276031420060d51d0cdd41c",
+      "115.atr": "4980667b19b7a637729d40762f071b483d69f5431db818cbddc9a8ae64cc4da2",
+      "116.dat": "0ab38cfca76d816673213dcd570504bb3ab02ef76d51540fd7a6075bc580ad85",
+      "116.hea": "5553273cafa68c106468ddfaa3bd1d6a30daec53cff1642d3592a20110b2edad",
+      "116.atr": "abd31e2c878073e67319d5a6fa34923fe117cca02e5c80318378405c853ccbef",
+      "118.dat": "66ea4b70b7d64abd0f49089ae1b8f0f577664c46e5b29ac23b291934e063df15",
+      "118.hea": "48a3d0c4e7742ca0e39a2cbb3ea5142a4d41261adbd0bb25651e0fcd9c6aef2b",
+      "118.atr": "77afd5400648d128223d5029a49c442f5abd65ba997f732489cb8eed39d71551",
+      "119.dat": "02a286a28e69b441568add915f16a2856b22bab893bf8729ee9654411ed3a5aa",
+      "119.hea": "658f01382d7280a06e2f4c06363569d477394a6898c69ee788bb383f6092df63",
+      "119.atr": "fd919c8ea20eed4a22fb37984977f30ce48d382eefd2d90934bf947a88e0fd7b",
+      "122.dat": "a700c794bfe23565603d75dc5706915f5436e522802d260e758683d11f5b9e13",
+      "122.hea": "b43ca64ed2c6e69d15def2c30f8cb2cbf25cb807f9530b1e7d5cfed2fd496f70",
+      "122.atr": "34966d92a94c72126253c0297407cff78e53be1f72c6814e28676bcda8be90de",
+      "124.dat": "296988e49d2653eb499ad0b17c46826b4296b7eaf94df3f76f1ba2dcdf6bc48b",
+      "124.hea": "2200f917fe7a1fa817b79069a274d3291a6fa66289521af5e7d38edeb3e82bce",
+      "124.atr": "f9c8cac368f1f6ba8895ae47f5771c82597374c1e6b030385ca2eb186454677c",
+      "205.dat": "8a513c39e6d9a1d732de0b3909a87aa1fcfd4bd55ab5f59a5b810967d252af36",
+      "205.hea": "739f76bbcbbfdad1f260a043a5f7106f6e912894065b15ea75bee42af0380a2a",
+      "205.atr": "0ae55e31175b9ba36e09c3b556b15e3e70f254936a2634d5ff341dfb86a74ea9",
+      "207.dat": "139f99250366fbf347cba4d8ea1fbe788f98cb1b93b70f50ccba70122d908605",
+      "207.hea": "7645d488d4c304760aae0a709193ffa13692c317b551bcbdcbb37011032178d8",
+      "207.atr": "cceb64d68033a277d2d5669458d49258295102dd3e20614a0ca7d63b67009404",
+      "208.dat": "22873623623c44ee413a5b60cacb15d4af2723734836fb3ae45d9ff96bdb36e7",
+      "208.hea": "5a27efda1bea972440a0b5f40a1c322898693e9602d5ce4722fe750b7dea46e9",
+      "208.atr": "33878519ee34d00cb233fdb15b11c2b8da0b0aea2e643d31b07105cc3392edf4",
+      "209.dat": "e2516dd126ea85529d9a0e8442fef5d880a492d41f0692a76e648c8437f15c5f",
+      "209.hea": "9ac1abedc17f898bf6a1db9c64c38ccf4f065ebc3989ee7740f4c0796655e590",
+      "209.atr": "c0697b176e7caf49e34f93e28eaeeff7167e2de380a8698f6cb3fb3a5fcb1c84",
+      "215.dat": "9e28799b5733a2d60470653e6f6ca26610143303233a1b7559cff54e2ad26ef9",
+      "215.hea": "a326c25698a0773a6be986f2cae499981224d3c61d8fdcddfbb3beaf3ff0bcbd",
+      "215.atr": "94968307b89eb0be766cbb88617f08571ed41b3b25b294d19a72b7ffd2525aee",
+      "223.dat": "1d42aa9e13f7349287ae5f0f00b40078c01aadd39e2cad1001ab42d3b7484594",
+      "223.hea": "bbd414e57b6eafa53204fb7eeb1212c9d47f598f36e8838b103bfb68a316ca85",
+      "223.atr": "beaa5cb3eb5fb64a5f9e1dfcac9297f9564b379c9c354cbf8f9f927d9b81ccf1",
+      "203.dat": "5ba7d2237fc838438efd8bb0a3baeffc5de2e70c76e3ab7e401e811ad82f43e0",
+      "203.hea": "25b3a3107dd00221b245ef5c23ffdfbd07caaf58e2cf377734f3a947361b26a5",
+      "203.atr": "2573f948e54a538983a44bf946e3e61cdda60e898b4c65ca8559b57c4877c706",
+      "220.dat": "c01ca1a76fb3a89e96134a08f2e5aa6e760eda59ea9086ba8aaa13ba0cca9cff",
+      "220.hea": "af40adc6deb9c0e942432e69a7153e41ac252eb6c15a24a715ef258469cda2e5",
+      "220.atr": "9cf9f330823e2a9850d51a7fce1f8ecfe5bb84e80e89412bd9f4de6a67f9ccc7",
+      "230.dat": "fba09ea54d9caa342c54c46e0df247335345b02444f7d15162906adfef55d057",
+      "230.hea": "5738bb479316dcc324b27807bbbffd8878da6156707c6cfbc08dcd0fa4771671",
+      "230.atr": "403d0d4842ba7135b1e14b9e5c50cba214753a0e17bf979090b2c6a8018f7eae",
+      "100.dat": "b2ea3c250e56e48f4b7b90697832b8ecd1afa1e0bb31f2dcfea4ed6e1075a639",
+      "100.hea": "60ebc904c7bf3e04d142638d3fd5c903e8dc9f10f1ea3264e07926aa089ee75e",
+      "100.atr": "8d8a5349fb16638ebbf649f1779d12e96d91b736b2aafe59db43719ae583d471",
+      "103.dat": "f7994f0bd196730779998b4bddf26cb47f396599fb370a08b5cb29a3ac4d555d",
+      "103.hea": "3da9706fc27cc5d627a31b04b74b908ac0b6e061843a87cbd57801e5ea0fed7b",
+      "103.atr": "392ce37fbc7e89b3f14998e197a844f23cce6a3db6edaa71b4b49bf3ca5b6596",
+      "105.dat": "fcd0153dfea69c749194bb73de7db124588857cfa2f6aecb72754894c8afde02",
+      "105.hea": "9a024eebf8e9baf630308815e689d7e3eab471ab0069db6aded127c396418d48",
+      "105.atr": "278d534c1ad952a6d41db963b6b2b00be070d8dd5fa66545caa5c18edcc36497",
+      "111.dat": "8372d98ae59fbfd023502a9d0fc03fb5383083da92584b964484e18593e08485",
+      "111.hea": "9e635a715d6cc44a716a7a73c6dd365bd94099f94e63accb2a65c5b25b4b69b5",
+      "111.atr": "372ed78bb0bbe7d5d9dc7e676c03d72530729775b5cfa94501485329fc47b8cb",
+      "113.dat": "f5509b71dabaaa11c53f687ee17aab0071bce3d471e2ab77c71a6434f5b7aacf",
+      "113.hea": "848ed5243adaf3b53c72b36b1a5a8b5b8cf585a1d78a02e7b25c1d38818d4343",
+      "113.atr": "39527d597a246410d2c16f062600c73271a73a7503d49cafd1d17508af4cd432",
+      "117.dat": "2ce7de6f20baf4cfef0369f9a13fa53784d18e2da78c11afa1e4c55e8ad1900e",
+      "117.hea": "452e70b5eb3fe3ebc3fc61284f70b788dbf83bb98f951c2b0bb5f0b95156d06a",
+      "117.atr": "232beaacf4a4eb4b6d2f2242f01ecae3d2842be1dd0afe890037ae050f91ce63",
+      "121.dat": "679f374a7b2557fed04a4bc5648301ce9bdd38e5a4f13b2e63ebbcf7cb3fb482",
+      "121.hea": "1838d38ff54fed9b831207761d7321682dad0b693f944e4c3a4e6388c46ca6ff",
+      "121.atr": "dbda472aa08eeb6bbbf775b8123e466a7ee57638caecd156407de3141c9fa71c",
+      "123.dat": "8a685a846b82d72aac4dd86171ad0fe5b19c0bd9ce51ddc1e6f015f73b2d8c3a",
+      "123.hea": "aab5351e9da6f4beb22392f1a469df4a9e4b8017fea820432cf7d1846244d094",
+      "123.atr": "061bfd2590fd9d6040d32741a19697491dedb65cbbc5b3865a5c50d49f52d709",
+      "200.dat": "a9e203b3807b9fcd3647cde03444437cb8eec7f5128a8eb413edafb394272e0f",
+      "200.hea": "9e0c2ff5b790cf624deab0ccb8a9f211a9e29a748d8197da3c1ee7c5b596b40c",
+      "200.atr": "f9624a11696760427d75314a78c31f89ca3c446af855890c8f8b66cddd8b3a3f",
+      "202.dat": "0c990e4142de6be898de4b21bd6e6705cd567e5d97cb731a994dc5aee9c7142d",
+      "202.hea": "6822216d1bc51f7014637c53e543cdc3863fea4ee3fec3aa99fb0762aece0cba",
+      "202.atr": "16d59e44564844c39a648164580a69e71f1657e951e6ad121b64eb1a11db037d",
+      "210.dat": "76e971fba03c0ae2ab261c7446240987ecde82f45dad1d4f36e290b950eb464b",
+      "210.hea": "9d6a422834435fb8d267256f4fd01bfd8158b511f662c4b5dd8c60059944a322",
+      "210.atr": "5a46bef3d185c903b1ce099a988898fc829cea7e6c5bc1984532efd694fa8db6",
+      "212.dat": "6b63d3e20c40073be852e8121196d5de2ede502168fcb6c10ca5af841418cc5c",
+      "212.hea": "f67d7c99a8ba055941e8aa98fd1f31dfd7dd1d957c85f40b488237eecba61aad",
+      "212.atr": "dc4d0bec7e3ced82f67ef9d5264bcdb3d167c2214125eb04891040fbbb340816",
+      "213.dat": "0cb13cd9299b0ab68f8f3064b2ab72f853d155abb277b68daef0a26cbc173b0d",
+      "213.hea": "6b64b05c7a28630acf3ffb5e541d635e3fc854ea3602b1b355762f94c6058f17",
+      "213.atr": "44349e22176aad3f688ca9a62f283a993927a0b9ef6d97f473cde3b16cfabc9a",
+      "214.dat": "a886b1ceb56e950858dedf5b56d3fdb5f26aef3667f8effcb880c1c000ee0cd3",
+      "214.hea": "beb6b379e93cbe94eb9f1461cccaa0131940e14322df4abbc07665b722ed9206",
+      "214.atr": "09c588b0623f6dc6138928ce2006f294c4ef3da143eec2cdba6eddb9b1597214",
+      "219.dat": "7fc27b77e313aaa40da9f39783f8fb29a6a910be148e67463e5093793644751a",
+      "219.hea": "d14f0ffbf19f9842dbaa15f82bcedbc7b9b96f00f422b7e4da31112a1d1b2b67",
+      "219.atr": "271928544ce78772669c50b26cf4de163a53f5b90187b5d8080928def79f0e6a",
+      "221.dat": "274d17c6a35f7adcbb10a59ea34350e5ad299c2d69e4fa579d8863213e1fe9ae",
+      "221.hea": "09afd18974ee6e0cfa8b5b6ce80112c4df0cfbb8c8d01d3d085ecdf7790ada7b",
+      "221.atr": "92549b966cc17bcf2edf00a97237d1e350a761d9ffe20065b5ed303848aad7ae",
+      "222.dat": "0510bf39ed2925a83debd249492bdfe77c575148376aaabeba4c7b7a2451ac5d",
+      "222.hea": "a395bf5e58492e6724616532aae1cca7c50626fd66fe61f843a92adadc27293d",
+      "222.atr": "a0206b778a9f073d451023e802e52059754648e83fe1dc669395b4884ccad356",
+      "228.dat": "b2421f15447772bb7a38f5073e4e07d5d9be50d875441a4a0821c9e22b78fdac",
+      "228.hea": "b4a2796ca39816b32d5b24c2c1d0a2aa355d159aafd7ecbfb1cdf11a695a14d8",
+      "228.atr": "7e08ee90f668800fb3e1a66193fb8f8b4b91c3ec2f52f384756bab826e019d1d",
+      "231.dat": "7d4f56d6c4b1d50322154381c1d8761457c2f2696973e915a3c19d8a5b789595",
+      "231.hea": "733195a792e806a897531475eabcdec71e96f7b6cd7bcf57f9f1b2538cb13503",
+      "231.atr": "b82cc005618eab81b3a246ca5c5a61903f3c0f40c191d7fb953adf054ea691de",
+      "232.dat": "3d74a21f848766c9607bc5eead7e4b2655f09586adb5561f02fd8fcb0e9da6d0",
+      "232.hea": "5ff480450238ffc957abde76687b7e3d728c4b7b19063c8a0b1d08469a2228ea",
+      "232.atr": "be0e236cb883c669128da01beae0ec0efc39fdfaa5c1e878a3cef5443db8c934",
+      "233.dat": "6ccd6b1fa0cafc052369e7ec0a99cc6c3b56b3c12afff26db800c55a826211b4",
+      "233.hea": "d5ef73b3b4a98bec6e3d853db08ff18b0a1a9173c95327bcb15b2cfecee99b85",
+      "233.atr": "c9ce42ecefa9a92e2ec69f9d237d8a53c67c60b31a25d579356ea8910bcc368a",
+      "234.dat": "89f826307bfc91a554021da87c17b88b843ed3d26aa9ea237fc6f7c8af00da6d",
+      "234.hea": "91c94c803d05f637cc29a3f353d88e1c25b20a25957c8cc25f7cbbf9fe2627c9",
+      "234.atr": "e829a3e4131fbe9420c1740bfb5000b3f4f64a2b40aa5f739ed6420f75be6785"
+    },
+    "splits": {
+      "train": {
+        "records": [
+          101,
+          106,
+          108,
+          109,
+          112,
+          114,
+          115,
+          116,
+          118,
+          119,
+          122,
+          124,
+          205,
+          207,
+          208,
+          209,
+          215,
+          223
+        ],
+        "n_beats": 41754,
+        "class_counts": [
+          37478,
+          720,
+          3145,
+          411
+        ],
+        "sha256": "e04edef2387522a308a0837f39d558a77e6b076366ff9a5a7629ae4d94ace3fe"
+      },
+      "val": {
+        "records": [
+          203,
+          220,
+          230
+        ],
+        "n_beats": 7277,
+        "class_counts": [
+          6735,
+          96,
+          445,
+          1
+        ],
+        "sha256": "ff31ecdb523248e0aaaff42143d8fe1a583c54d28ff7e18d3ecc42e1a88a58f2"
+      },
+      "test": {
+        "records": [
+          100,
+          103,
+          105,
+          111,
+          113,
+          117,
+          121,
+          123,
+          200,
+          202,
+          210,
+          212,
+          213,
+          214,
+          219,
+          221,
+          222,
+          228,
+          231,
+          232,
+          233,
+          234
+        ],
+        "n_beats": 49685,
+        "class_counts": [
+          44240,
+          1837,
+          3220,
+          388
+        ],
+        "sha256": "655a3f5fd4b76dc6ab7ec12a15bd8e4e89bce00c0c2cae1854858b4e0529f70e"
+      }
+    }
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "cpu": "x86_64",
+    "torch_threads": 2,
+    "device": "cpu",
+    "packages": {
+      "torch": "2.14.1+cpu",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.8.0",
+      "wfdb": "4.3.1",
+      "streamlit": "1.65.0",
+      "plotly": "7.1.0"
+    }
+  },
+  "source_hashes": {
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/defenses/adversarial_training.py": "ef87160bfaf3946c4b7e63086cf37559eafdcc22eed1f2de79e87d232696aa94",
+    "src/defenses/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/defenses/input_smoothing.py": "2a838ada365aa8177ce371e74fe9eabbc6fcf836f2f19ccf769fd2bfd440d0b0",
+    "src/models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/models/baseline_features.py": "4f19a0dac1ad295b159ef8f7301ad0f23dc5565b31a014fe5640f3f7bf88f820",
+    "src/models/cnn1d.py": "5e1d4d65681f205867744656c7c641a247fcbf36b6c592fdcca8ff5ca2c9a40c",
+    "src/models/checkpoint.py": "6c451b4304d8941bc22be744d0dacc2ae345df89ef8ce7dd0976fe5c1f4e5ec8",
+    "src/utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/utils/config.py": "4bad9eba3d1bb2496d0d9403a133f2ce3698e9160a51399a86bd1451f40c65ae",
+    "src/utils/device.py": "285bcca72bb9a163dbe3f25857ae351efbe22891831730dde0c5af3d8649173d",
+    "src/utils/tags.py": "1ea8352a354bb3e8b9e6e1e2c40faa421782f2db2d7022c3480ee0ecdc426c68",
+    "src/utils/experiment.py": "49fe38a2eadea12e6c35edf488ca4d5dc65e98076c3fe480e3ffecb593992068",
+    "src/utils/paths.py": "32899fd2666da43a8821229aba9940c590963fe438345dc1cc97ff94e5a617bd",
+    "src/utils/seed.py": "8cfd021802cb8155d3e76c7c38a4b2110dfabf632c1d0c64b41929ad5badf953",
+    "src/explainability/saliency.py": "d887f26e0736707619a18fe7d6bef0bc90788c4ca41d8df10e126e9a159b9d12",
+    "src/explainability/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/explainability/integrated_gradients.py": "99bf1af676644290c38d86ac68a29ae91634f51bba41148f8c4dfb662abf19d4",
+    "src/preprocessing/normalize.py": "b10d8fa8b4afa4a3a79567db77be6cdd9c5560e4ead4a6d99ffff099fe0f3ec9",
+    "src/preprocessing/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/preprocessing/qrs_detect.py": "e250c9b3701f72268c0695a6ba41ef7a24d6a328426d3d655f94db8d2227a4e0",
+    "src/preprocessing/pipeline.py": "845c3556355896b502f7fa7e663deb33a6a219c3c0794278341b15cffbebd8ea",
+    "src/preprocessing/filtering.py": "4139881401eb89d4a25da70df6b9f8dcb00c65d887de4b3d01e48556b58d1f1c",
+    "src/preprocessing/segmentation.py": "781638b298ff05174af802b52e0eeb481158c2604189817ef2db765a79117646",
+    "src/evaluation/metrics.py": "3f669fe97dd3eddbe022f931028aaa8483032b3dcc37cb37b110cb328458f03a",
+    "src/evaluation/predict.py": "14934fe9c3be98beb79bafb611a5db026c767ec2dc025a110242d78fd78da2fd",
+    "src/evaluation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/evaluation/robustness.py": "1d56782159c30ce6e4d6a085f80b3132dc1748d073e7d3de974a2997e10ca46f",
+    "src/data/splits.py": "3886a3ea110a7edca5844a0620e747c1b1c175b5bd52c5dc4725af9bfdfdbe36",
+    "src/data/cache.py": "7d4c90a8253245b9fad67a8d7d73b16bd30d182a5bc065f595cd7647537736f7",
+    "src/data/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/data/synthetic.py": "7f3557681b17e67b7859e1d5291548a8ca728228608bde51fcda6b3ddc362d7d",
+    "src/data/mitbih.py": "f1962bf15304fb397589b2574f5e7a36ee572a599aceadc8b5ae8ea6aaff5583",
+    "src/data/torch_dataset.py": "3bc9f012fac9218b590bf6a72f4cc7c798db7951fb4c2c539fad26e6cbbf4a2b",
+    "src/data/protocol.py": "73bd7335973c80b0fdb51713d35e0dabac16e5e83451f092b3f306569f7583be",
+    "src/data/record.py": "511b31825352369f5606ead3310991645c8cd754a8ea209d7cf26626fb03aa05",
+    "src/data/source.py": "bf665bd1d72fbd2a3c27b4855540fc7b941085d1c88bba4b2c27328f8ba23149",
+    "src/data/dataset.py": "6432831d0cda25bf7e1fe76cb06e332c2ed62398f7eca50dcdebbccd12f683ad",
+    "src/attacks/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/attacks/fgsm.py": "709c66969a08cee1478670b3c3899bae5cda1e8eaeb970bddeb9943b05bc169a",
+    "src/attacks/pgd.py": "da88d5823b9a0e1f5d0f1c610c597900118c56f253705c4f6d19620c9c060511",
+    "scripts/train_multiclass.py": "6dde7c86f3aae5d60d5d57ae56c60a44a27af911defef6b5014f2ffda4aea8e9",
+    "scripts/train_protocol.py": "51024e5eec1cd42b64b8fee504fdc88a30df5074a8d68e8306213f931f694e61",
+    "scripts/run_benchmark.py": "cd7d6b25a046f452b9825ad8d7e2c3929d96a0cac647bfde3eb1a95a3fbc7ad3",
+    "scripts/generate_attacks.py": "5d2474add6e0d8e05a6aa8e8db114d71ab284dc2a6719fd5ba7eefd29381b577",
+    "scripts/train.py": "33ab180087d528bcc8be24c37938a671fc8f41dd65051f0942a51d2f6d01dfab",
+    "scripts/run_benchmark_multiclass.py": "5c2c7344ed7fbd7c3d981ee8a05693357072c018befc51ec7aef6431edad9eee",
+    "scripts/prepare_data.py": "16411f94249fe7da63e60137862383262950c1ecd5bda9199f545bd2b447dc17",
+    "scripts/prepare_protocol.py": "4210e92f8fa014910b359aac6715672df68342e09aa899d7eb7d51cce9990e95",
+    "configs/dataset.yaml": "35ef62284f22c852310d2257971c9925b4206ed46df8c98f2e16a4ff4659a610",
+    "configs/training_multiclass.yaml": "02ce55f224d945df4c57b40c55f4367dc55f6bf4483b4360a6916ee34d6746fe",
+    "configs/study_v2.yaml": "6dfc1e6560b7445f6bcbcfd0b10b579e4fba000be97c1fe68381563c313a3349",
+    "configs/protocol_v2.yaml": "19c5d0bc8b8c5ec0867b5ffb7bf5fb802100e31757ef55ddc6bc82ab558d9b05",
+    "configs/experiments.yaml": "d3edd90544d09ea32ae826f6ffe404e57903b6c9aeb285ebc7e57d6481d6b747",
+    "configs/training.yaml": "c46d41a5aa6ade24b1a6e5731a26b45b9facf0bc6f20bc66e4e215c0aff400c2"
+  },
+  "completed_utc": "2026-10-16T01:07:51.501205+00:00",
+  "result": {
+    "best_val_score": 0.703344120819849,
+    "epochs": 12,
+    "train_seconds": 87.66702063099996,
+    "n_params": 11265
+  },
+  "checkpoint_sha256": "8fead133c5d9d646675ae846972719508a1eaab9724f625454708535aa9d8099"
+}

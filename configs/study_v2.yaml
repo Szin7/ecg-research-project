@@ -1,0 +1,23 @@
+seeds: [17, 42, 73]
+variants: [morphology, context, context_defended, aami_context]
+max_epochs: 30
+patience: 8
+batch_size: 256
+learning_rate: 0.0005
+weight_decay: 0.00001
+training_pgd:
+  epsilon: 0.1
+  steps: 3
+  clean_fraction: 0.5
+evaluation:
+  bootstrap_repetitions: 2000
+  attack_seed: 20261013
+  epsilons: [0.0, 0.05, 0.1, 0.25, 0.4]
+  pgd_steps: 20
+  pgd_starts: 3
+  strength_steps: 50
+  full_test_epsilons: [0.1]
+  audit_beats_per_record: 64
+  subset_seed: 20261013
+  threat_model: Waveform-only Linf; expert peak positions and past RR features stay fixed.
+selection: Highest validation F1 per variant; macro-F1 for AAMI. Report all seeds.
