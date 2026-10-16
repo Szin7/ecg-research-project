@@ -1,3 +1,35 @@
+import os
+import subprocess
+import sys
+from pathlib import Path
+
+# Limit CPU threads on the shared hosting environment.
+os.environ.setdefault("OMP_NUM_THREADS", "2")
+os.environ.setdefault("MKL_NUM_THREADS", "2")
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+# Processed demo files are excluded from Git, so prepare them on first startup.
+demo_files = [
+    PROJECT_ROOT / "data" / "processed" / "demo_test.npz",
+    PROJECT_ROOT / "data" / "processed" / "demo_aami_test.npz",
+]
+
+if not all(path.exists() for path in demo_files):
+    subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "scripts.prepare_data",
+            "--mode",
+            "demo",
+            "--task",
+            "both",
+        ],
+        cwd=PROJECT_ROOT,
+        check=True,
+    )
+
 import numpy as np
 import pandas as pd
 import streamlit as st

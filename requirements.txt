@@ -1,0 +1,5 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+-c requirements-tested.txt
+
+torch==2.14.1+cpu
+-e .
